@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Script from "next/script";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -55,6 +56,20 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#050816] text-white">
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18225341918"
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-ads-tag" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18225341918');
+        `}
+      </Script>
+
       <style>{`
         @keyframes moveTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-22px) rotate(12deg); } }
