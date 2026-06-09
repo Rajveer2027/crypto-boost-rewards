@@ -15,9 +15,11 @@ import {
   Wallet,
   X,
   Zap,
+  PhoneCall,
 } from "lucide-react";
 
 const TELEGRAM = "https://t.me/YOUR_TELEGRAM";
+const WHATSAPP = "https://wa.me/972559810422";
 
 const cryptoRows = ["BTC +2.4%", "ETH +1.8%", "USDT 1.00", "BNB +3.1%", "SOL +5.2%"];
 
@@ -76,6 +78,16 @@ export default function Home() {
         <div className="absolute top-40 -right-40 h-[520px] w-[520px] rounded-full bg-violet-600/25 blur-3xl" />
       </div>
 
+      <motion.a
+        href={WHATSAPP}
+        target="_blank"
+        whileHover={{ scale: 1.12 }}
+        whileTap={{ scale: 0.94 }}
+        className="fixed bottom-5 right-5 z-[998] flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl shadow-green-500/40"
+      >
+        <PhoneCall size={30} />
+      </motion.a>
+
       <div className="overflow-hidden border-b border-cyan-400/20 bg-black/50 py-2">
         <div className="ticker flex w-[200%] gap-8 text-sm font-bold text-cyan-300">
           {[...cryptoRows, ...cryptoRows, ...cryptoRows, ...cryptoRows].map((x, i) => (
@@ -96,9 +108,14 @@ export default function Home() {
             </div>
           </div>
 
-          <a href={TELEGRAM} target="_blank" className="rounded-xl bg-cyan-400 px-4 py-2 font-black text-black">
-            Telegram
-          </a>
+          <div className="flex gap-2">
+            <a href={WHATSAPP} target="_blank" className="rounded-xl bg-green-500 px-4 py-2 font-black text-white">
+              WhatsApp
+            </a>
+            <a href={TELEGRAM} target="_blank" className="rounded-xl bg-cyan-400 px-4 py-2 font-black text-black">
+              Telegram
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -117,10 +134,20 @@ export default function Home() {
 
           <p className="mt-5 max-w-xl text-lg leading-8 text-gray-300">
             Dedicated crypto seller website for USDT, BTC, ETH, gaming platform crypto support,
-            multi-chain transfers, and Telegram deal management.
+            multi-chain transfers, and Telegram / WhatsApp deal management.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <motion.a
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.94 }}
+              href={WHATSAPP}
+              target="_blank"
+              className="flex items-center justify-center gap-2 rounded-2xl bg-green-500 px-7 py-4 font-black text-white"
+            >
+              WhatsApp Deal <PhoneCall />
+            </motion.a>
+
             <motion.a
               whileHover={{ scale: 1.06 }}
               whileTap={{ scale: 0.94 }}
@@ -128,7 +155,7 @@ export default function Home() {
               target="_blank"
               className="flex items-center justify-center gap-2 rounded-2xl bg-cyan-400 px-7 py-4 font-black text-black"
             >
-              Start Crypto Deal <ArrowRight />
+              Telegram Deal <ArrowRight />
             </motion.a>
 
             <motion.button
@@ -138,7 +165,7 @@ export default function Home() {
               className="flex items-center justify-center gap-2 rounded-2xl border border-cyan-400/30 bg-white/10 px-7 py-4 font-black backdrop-blur"
             >
               <QrCode />
-              Connect Wallet & Get Reward
+              Connect Wallet
             </motion.button>
           </div>
         </div>
@@ -183,8 +210,12 @@ export default function Home() {
               <QrCode /> Connect Wallet
             </button>
 
+            <a href={WHATSAPP} target="_blank" className="mt-3 flex justify-center gap-2 rounded-2xl bg-green-500 px-6 py-4 font-black text-white">
+              <PhoneCall /> WhatsApp Seller
+            </a>
+
             <a href={TELEGRAM} target="_blank" className="mt-3 flex justify-center gap-2 rounded-2xl bg-cyan-400 px-6 py-4 font-black text-black">
-              <MessageCircle /> Contact Seller
+              <MessageCircle /> Telegram Seller
             </a>
           </div>
         </div>
@@ -220,9 +251,14 @@ export default function Home() {
           Real crypto enquiry only. No fake tokens, no guaranteed profit, no financial advice.
         </p>
 
-        <a href={TELEGRAM} target="_blank" className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-cyan-400 px-8 py-4 font-black text-black">
-          <Zap /> Open Telegram
-        </a>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href={WHATSAPP} target="_blank" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-green-500 px-8 py-4 font-black text-white">
+            <PhoneCall /> WhatsApp Now
+          </a>
+          <a href={TELEGRAM} target="_blank" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-cyan-400 px-8 py-4 font-black text-black">
+            <Zap /> Open Telegram
+          </a>
+        </div>
       </section>
 
       {scannerOpen && (
